@@ -1,0 +1,86 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --page-font: 'Courier New', Courier, monospace;
+  --text-color: hsl(0, 0%, 90%)
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 10rem 15rem 1fr;
+}
+
+.header {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: hsl(330, 50%, 20%);
+}
+
+.title {
+  color: var(--text-color);
+  font-size: 6rem;
+  font-family: var(--page-font);
+}
+
+.info {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background: hsl(15, 60%, 90%);
+}
+
+.status {
+  color: hsl(330, 50%, 20%);
+  font-family: var(--page-font);
+  font-size: 2rem;
+}
+
+.main {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  padding: 10rem;
+  background: hsl(306, 21%, 49%);
+}
+
+.board {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 0.4rem;
+  background: hsl(0, 0%, 20%);
+  width: 25rem;
+  height: 25rem;
+}
+
+.square {
+  padding: 1rem;
+  border: none;
+  background: var(--text-color);
+  color: hsl(0, 75%, 50%);
+  font-size: 4rem;
+  font-family: var(--page-font)
+}
+
+.reset {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.2rem;
+  background: var(--text-color);
+  color: hsl(330, 50%, 20%);
+  font-family: var(--page-font);
+  font-size: 1.5rem;
+}
+
+.square:hover, .reset:hover {
+  cursor: pointer;
+}
+
+.square:active, .reset:active {
+  background: hsl(0, 0%, 80%);
+}

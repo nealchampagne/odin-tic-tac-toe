@@ -1,3 +1,5 @@
+/** Set up the gameboard */
+
 function gameBoard() {
   let board = [];
   const rows = 3;
@@ -25,8 +27,13 @@ function gameBoard() {
   return {getBoard, writeToBoard};
 };
 
+/** Main game functions wrapped in an IIFE */
+
 const game = (() => {
   const board = gameBoard();
+
+
+  /** Check whether there is a winning boardstate when a new mark is added */
 
   const checkWin = () => {
     const content = board.getBoard();
@@ -73,8 +80,13 @@ const game = (() => {
 
   const takeTurn = (x,y) => board.writeToBoard(x,y,getCurrentPlayer().mark);
   
+  /** Only expose the items needed by the other functions in the script */
+
   return {checkWin, alternateTurn, takeTurn, getCurrentPlayer, getBoard: board.getBoard};
 })();
+
+
+/** DOM manipulation to run the game in the window not the console */
 
 const display = () => {
   const statusDiv = document.querySelector('.status');

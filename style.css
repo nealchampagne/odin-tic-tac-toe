@@ -46,6 +46,7 @@ body {
   justify-items: center;
   align-items: start;
   padding: 10rem;
+  gap: 5rem;
   background: hsl(306, 21%, 49%);
 }
 
